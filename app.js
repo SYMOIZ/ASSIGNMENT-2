@@ -1,20 +1,17 @@
-function saveObjectPropertiesToLocalStorage(obj) {
-    for (const prop in obj) {
-      const key = prop;
-      const value = obj[prop];
-      localStorage.setItem(key, value);
+function searchValue(arr, value) {
+    if (arr.length === 0) {
+      return false;
     }
     
-    const newObj = {};
-    for (const prop in localStorage) {
-      newObj[prop] = localStorage.getItem(prop);
+    if (arr[0] === value) {
+      return true;
     }
     
-    return newObj;
+    return searchValue(arr.slice(1), value);
   }
   
   // Example usage
-  const obj = { name: 'John', age: 30 };
-  const newObj = saveObjectPropertiesToLocalStorage(obj);
-  console.log(newObj); // Output: { name: 'John', age: '30' }
+  const arr = [1, 2, 3, 4, 5];
+  console.log(searchValue(arr, 3)); // Output: true
+  console.log(searchValue(arr, 6)); // Output: false
   
