@@ -1,17 +1,49 @@
-function searchValue(arr, value) {
-    if (arr.length === 0) {
-      return false;
-    }
-    
-    if (arr[0] === value) {
-      return true;
-    }
-    
-    return searchValue(arr.slice(1), value);
-  }
+// Load the movie data from a JSON file
+const movies = [
+    {
+      title: "Movie 1",
+      genre: "action",
+      rating: 8,
+      year: 2022,
+      language: "English",
+      rank: 1
+    },
+    {
+      title: "Movie 2",
+      genre: "comedy",
+      rating: 7,
+      year: 2021,
+      language: "Spanish",
+      rank: 2
+    },
+    {
+      title: "Movie 3",
+      genre: "drama",
+      rating: 9,
+      year: 2020,
+      language: "French",
+      rank: 3
+    },
+    // Add more movies
+  ];
   
-  // Example usage
-  const arr = [1, 2, 3, 4, 5];
-  console.log(searchValue(arr, 3)); // Output: true
-  console.log(searchValue(arr, 6)); // Output: false
+  // Get the form and recommendation section elements from the HTML
+  const form = document.querySelector("form");
+  const recommendationsSection = document.querySelector("#recommendations");
+  
+  // Add an event listener to the form for when it's submitted
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+    
+    // Get the user's preferences from the input fields
+    const genre = document.querySelector("#genre").value;
+    const rating = document.querySelector("#rating").value;
+    const year = document.querySelector("#year").value;
+    
+    // Filter the movies based on the user's preferences
+    const filteredMovies = movies.filter(function(movie) {
+      if (genre !== "all" && movie.genre !== genre) {
+        return false;
+      }
+      if (rating !== "all" && movie
   

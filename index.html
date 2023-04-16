@@ -1,12 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<html>
+  <head>
+    <title>Movie Recommendation App</title>
+  </head>
+  <body>
+    <h1>Movie Recommendation App</h1>
+    <form>
+      <label for="genre">Genre:</label>
+      <select id="genre">
+        <option value="all">All</option>
+        <option value="action">Action</option>
+        <option value="comedy">Comedy</option>
+        <option value="drama">Drama</option>
+        <!-- Add more options for other genres -->
+      </select>
+      
+      <label for="rating">Rating:</label>
+      <select id="rating">
+        <option value="all">All</option>
+        <option value="7">7+</option>
+        <option value="8">8+</option>
+        <option value="9">9+</option>
+        <!-- Add more options for other ratings -->
+      </select>
+      
+      <label for="year">Release Year:</label>
+      <select id="year">
+        <option value="all">All</option>
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+        <option value="2020">2020</option>
+        <!-- Add more options for other years -->
+      </select>
+      
+      <button type="submit">Get Recommendations</button>
+    </form>
     
-</body>
+    <section id="recommendations"></section>
+    
+    <script src="app.js"></script>
+  </body>
 </html>
